@@ -18,7 +18,7 @@ def calc():
   print("To Multiply these numbers together, type the letter C")
   print("To Divide the first number by the second, type the letter D")
   print("To times a to the power of b, type the letter E")
-  value = input("Type your chosen letter (in capitals) here: ")
+  value = input("Type your chosen letter here: ").upper()
   if value == "A":
     print(a + b)
   elif value == "B":
@@ -33,7 +33,7 @@ def calc():
     print("Error: Incorrect value")
 
 def run():
-  runagain = input("Run again? (Y/N): ")
+  runagain = input("Run again? (Y/N): ").upper()
   if runagain == "Y":
     calc()
     run()
