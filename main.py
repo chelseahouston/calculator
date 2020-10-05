@@ -1,18 +1,27 @@
+# CALCULATING 2 NUMBERS ---
+# USER INPUT NUMBERS ---
 def calc():
   a = input("Enter a number: ")
+
+  # CONFIRM INTEGER IS INPUT
   try:
     a = int(a)
   except ValueError:
-    print("Incorrect value. Resarting Calculator...")
-    calc()
+    print("Incorrect value.")
     run()
   b = input("Enter another number: ")
+  # CONFIRM INTEGER IS INPUT
   try:
     b = int(b)
   except ValueError:
-    print("Incorrect value. Resarting Calculator...")
-    calc()
+    print("Incorrect value.")
     run()
+  
+  # ADDITION A ---
+  # SUBTRACTION B ---
+  # MULTIPLY C ---
+  # DIVIDE D ---
+  # POWER OF E ---
   print("To Add these numbers together, type the letter A")
   print("To Subtract your first number from the second, type the letter B")
   print("To Multiply these numbers together, type the letter C")
@@ -31,16 +40,24 @@ def calc():
     print(a**b)
   else: 
     print("Error: Incorrect value")
+    run()
 
+# RUN AGAIN? ---
 def run():
-  runagain = input("Run again? (Y/N): ").upper()
-  if runagain == "Y":
-    calc()
-    run()
-  elif runagain == "N":
-    print("Thank you for using Chelsea's Calculator. Have a good day.")
-  else:
-    print("Error: Incorrect Value.")
-    run()
+  while True:
+    runagain = input("Run again? (Y/N): ").upper()
+    if runagain not in ('Y', 'N'):
+      print("Invalid Input.")
+      run()
+      break
+    if runagain == 'Y':
+      calc()
+      run()
+      break
+    else:
+      print("Thank you for using the Calculator. Have a good day.")
+      break
+
+# CALL FUNCTIONS ---
 calc()
 run()
